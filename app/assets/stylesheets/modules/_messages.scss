@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper{//全体の親
+  display: flex;
+}
+  .sideBar{//サイドバー全体の親要素
+    width: 300px;
+    height: 100vh;
+    background-color: #2f3e51;
+    &__header{//左上のサイドバー
+      height: 100px;
+      width: 300px;
+      background-color: #253141;
+      display: flex;
+      align-items: center;
+      &__box{//左上部内 (BOX)
+        height: 20px;
+        width: 260px;
+        background-color: #253141;
+        margin: 0  20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .sideBar__UserName{//BOX内 (ユーザー名)
+          color: #ffffff;
+          font-weight: bold;
+        }
+        .sideBar__box__right{//左上部内の (BOXアイコン) 親要素
+          height: 20px;
+          width: 60px;
+          display: flex;
+          text-decoration: none;
+          justify-content: flex-end;
+          .sideBar__icon{//左上部内（BOX両方のアイコン）子要素
+            margin-right: 5px;
+            color: #ffffff;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    &__group{//グループ表示の親要素
+      .sideBar__list__top{//グループ（ユーザー名）子要素
+        padding: 20px 20px 5px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+      .sideBar__list.botm{//グループ（コメント）子要素
+        padding: 0 20px 40px 20px;
+        font-size: 11px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    }
+  }
+  .mainChat{//メインチャットの親要素
+    width: calc(100vw - 300px);
+    background-color: #ffffff;
+      &__header{//メイン上部  (全体の親要素)
+        height: 100px;
+        width: calc(100vw - 300px);
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      &__group{//グループ （BOX名） 親要素
+        margin: 0 0 0 40px;
+        .group__name{//グループ （BOX名）子要素
+          font-size: 20px;
+          color: #333333;
+          margin: 35px 0 15px 0 ;
+        }
+        .group__main{//グループ （BOXメッセージ） 子要素
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      &__edit{//edit  親要素
+        width: 112px;
+        .edit__icon{//edit  子要素
+          text-decoration: none;
+          border: 1px solid #38aef0;
+          padding: 15px 20px;
+          color: #38aef0;
+        }
+      }
+      }
+      .mainChat-centre{//センターメッセージ 親要素
+        height: calc(100vh - 190px);
+         background-color: #fafafa;
+         p: 35px 40px 0 40px;
+      }
+        .mainChat-box{//センター （ボックス)  親要素
+          display: flex;
+        }
+          .mainChat-user__name{//センター (ユーザー名) 子要素
+            color: #333333;
+            font-size: 16px;
+          }
+          .mainChat-user__deteline{//センター (日時) 子要素
+            color: #999999;
+            font-size: 12px;
+            margin: 0 0 0 20px;
+          }
+        .messege{//センター (メッセージ) 
+          color: #434A54;
+          font-size: 14px;
+          margin: 12px 0 46px 0;
+        }
+      .mainChat__botm{//メイン下部
+        height: 90px;
+        width: calc(100vw - 300px);
+        background-color: #d2d2d2;
+        padding: 20px 40px 20px 40px;
+        
+        .form{
+          // justify-content:space-between;
+          display: flex;
+          &__box{
+            display: flex;
+            font-size: 16px;
+            width: 100%;
+            color: #434a54;
+            position: relative;
+            .mese{
+              padding: 0 15px;
+              height: 50px;
+              width: 100%;
+              border-style: none;
+            }
+            .form-img{
+              position: absolute;
+              right: 20px;
+              top: 15px;
+              .file{
+                display: none;
+              }
+            }
+          }
+          .send{
+            width: 100px;
+            height: 50px;
+            background-color: #eeeeee;
+            font-size: 15px;
+            color: #1a1d21;
+            margin-left: 20px;
+            cursor: pointer;
+          }
+        }
+      }    
+  }
+

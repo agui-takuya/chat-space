@@ -1,0 +1,26 @@
+.mainChat
+  .mainChat__header
+    %ul.mainChat__header__group
+      %li.group__name
+        masa
+      %li.group__main
+        test
+    .mainChat__header__edit
+      = link_to "#", class: "edit__icon" do
+        edit
+  .mainChat-centre
+    .mainChat-box
+      .mainChat-user__name
+        name
+      .mainChat-user__deteline
+        2020/05/20
+    .messege
+      今日は朝から
+  .mainChat__botm
+    %form.form
+      .form__box
+        %input{type: 'text', placeholder: 'type a message',class: "mese"}
+        %label.form-img
+          %input{type: "file", class: "file"}
+          = icon('fas', 'image')
+      %input{type: "submit", value: "Send", class: "send"}
