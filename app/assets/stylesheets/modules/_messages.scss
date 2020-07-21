@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+// a{
+//   color: #ffffff;
+// }
 .wrapper{//全体の親
   display: flex;
 }
@@ -90,7 +93,7 @@
       .mainChat-centre{//センターメッセージ 親要素
         height: calc(100vh - 190px);
          background-color: #fafafa;
-         p: 35px 40px 0 40px;
+         padding: 35px 40px 0 40px;
       }
         .mainChat-box{//センター （ボックス)  親要素
           display: flex;
