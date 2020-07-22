@@ -2,13 +2,15 @@
   .mainChat__header
     %ul.mainChat__header__group
       %li.group__name
-        masa
+        = @group.name
       %li.group__main
-        test
+        - @group.users.each do |user|
+          = user.name
     .mainChat__header__edit
-      = link_to "#", class: "edit__icon" do
+      = link_to edit_group_path(@group), class: "edit__icon" do
         edit
   .mainChat-centre
+    = render @messages
     .mainChat-box
       .mainChat-user__name
         name
@@ -17,10 +19,10 @@
     .messege
       今日は朝から
   .mainChat__botm
-    %form.form
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .form__box
-        %input{type: 'text', placeholder: 'type a message',class: "mese"}
-        %label.form-img
-          %input{type: "file", class: "file"}
-          = icon('fas', 'image')
-      %input{type: "submit", value: "Send", class: "send"}
+        = f.text_field :content, class: 'messe', placeholder: 'type a message'
+        = f.label :image, class: 'form-img' do
+          = icon('far', 'image', class: 'form-img')
+          = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'send'
