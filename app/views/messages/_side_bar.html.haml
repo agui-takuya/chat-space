@@ -4,10 +4,15 @@
       %p.sideBar__UserName
         = current_user.name
       .sideBar__box__right
-        = link_to "#", class: "sideBar__icon" do
+        = link_to new_group_path, class: "sideBar__icon" do
           .far.fa-edit
         = link_to edit_user_path(current_user),class: "sideBar__icon"  do
           .fa.fa-cog
   .sideBar__group
-    .sideBar__list__top aguitakuya
-    .sideBar__list.botm メッセージ無し
+    - current_user.groups.each do |group|
+      .sideBar__list
+        = link_to group_messages_path(group) do
+          .sideBar__list__top 
+            = group.name
+          .sideBar__list.botm 
+            = group.show_last_message
