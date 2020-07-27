@@ -11,13 +11,6 @@
         edit
   .mainChat-centre
     = render @messages
-    .mainChat-box
-      .mainChat-user__name
-        name
-      .mainChat-user__deteline
-        2020/05/20
-    .messege
-      今日は朝から
   .mainChat__botm
     = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .form__box
