@@ -45,6 +45,7 @@ $(function(){
     e.preventDefault()
     let formData = new FormData(this);
     let url = $(this).attr('action');
+    $(".mainChat-centre").val("");
     $.ajax({
       url: url,
       type: "POST",
@@ -58,6 +59,8 @@ $(function(){
       $('.mainChat-centre').append(html);      
       $('form')[0].reset();
       $('.send').prop("disabled", false);
+      $('.mainChat-centre').append(insertHTML);
+      $('.mainChat-centre').animate({ scrollTop: $('.mainChat-centre')[0].scrollHeight});
     })
   });
 });

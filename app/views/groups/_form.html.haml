@@ -14,7 +14,6 @@
     .SettingGroupForm__leftField
       %label.SettingGroupForm__label チャットメンバーを追加
     .SettingGroupForm__rightField
-      
       .UserSearch
         %input#UserSearch__field.SettingGroupForm__input{placeholder: "追加したいユーザー名を入力してください", type: "text"}/
       #UserSearchResult
@@ -25,7 +24,7 @@
       .ChatMembers
         .ChatMember
           %p.ChatMember__name= current_user.name
-          %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}tMembersf.collection_check_boxes :user_ids, User.all, :id, :name
+          %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
         - group.users.each do |user|
           - if current_user.name != user.name
             .ChatMember
