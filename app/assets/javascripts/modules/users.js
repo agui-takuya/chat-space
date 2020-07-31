@@ -8,7 +8,6 @@ $(function() {
                 `;
     $("#UserSearchResult").append(html);
   }
-
   function addNoUser() {
     let html = `
                 <div class="ChatMember clearfix">
@@ -61,3 +60,4 @@ $(function() {
     $(this).parent().remove();
   });
 });
+

@@ -45,6 +45,7 @@ $(function(){
     e.preventDefault()
     let formData = new FormData(this);
     let url = $(this).attr('action');
+    $(".mainChat-centre").val("");
     $.ajax({
       url: url,
       type: "POST",
