@@ -11,6 +11,7 @@
     width: 300px;
     height: 100vh;
     background-color: #2f3e51;
+    overflow:scroll;
     &__header{//左上のサイドバー
       height: 100px;
       width: 300px;
@@ -44,6 +45,7 @@
       }
     }
     &__group{//グループ表示の親要素
+      overflow: scroll;
       .sideBar__list__top{//グループ（ユーザー名）子要素
         padding: 20px 20px 5px 20px;
         font-size: 15px;

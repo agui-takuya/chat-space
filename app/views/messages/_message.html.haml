@@ -3,12 +3,12 @@
     .mainChat-box__name
       = message.user.name
     .mainChat-box__deteline
-      = message.created_at.to_s("%Y年%m月%d日 %H時%M分")
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .messege
     - if message.content.present?
       %p.Message__content
         = message.content
-    = image_tag message.image.url, class: 'Message__image' if message.image.present?
+        = image_tag message.image.url, class: 'Message__image' if message.image.present?
 
 
   
