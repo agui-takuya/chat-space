@@ -59,7 +59,6 @@ $(function(){
       $('.mainChat-centre').append(html);      
       $('form')[0].reset();
       $('.send').prop("disabled", false);
-      $('.mainChat-centre').append(insertHTML);
       $('.mainChat-centre').animate({ scrollTop: $('.mainChat-centre')[0].scrollHeight});
     })
   });

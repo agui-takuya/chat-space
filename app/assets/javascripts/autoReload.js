@@ -41,7 +41,7 @@ $(function(){
   }
 
   let reloadMessages = function() {
-    let last_message_id = $('.MessageBox:last').data("message-id");
+    let last_message_id = $('.MessageBox:last').data("message-id") || 0;
     console.log(last_message_id)
     $.ajax({
       url: "api/messages",
@@ -51,7 +51,7 @@ $(function(){
     })
     .done(function(messages) {
       if (messages.length !== 0) {
-        var insertHTML = '';
+        let insertHTML = '';
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
@@ -63,8 +63,5 @@ $(function(){
       alert('error');
     });
   };
-  always(() => {
-    $(".form__submit").removeAttr("disabled");
-    });
   setInterval(reloadMessages, 7000);
 });

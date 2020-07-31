@@ -5,5 +5,6 @@ class Api::MessagesController < ApplicationController
     # ajaxで送られてくる最後のメッセージのid番号を変数に代入
     last_message_id = params[:id]
     @messages = group.messages.includes(:user).where("id > ?", last_message_id)
+    
   end
 end
