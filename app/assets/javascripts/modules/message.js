@@ -41,7 +41,6 @@ $(function(){
   }
 
   $('.form').on('submit', function(e){
-    console.log("OK")
     e.preventDefault()
     let formData = new FormData(this);
     let url = $(this).attr('action');
@@ -61,5 +60,8 @@ $(function(){
       $('.send').prop("disabled", false);
       $('.mainChat-centre').animate({ scrollTop: $('.mainChat-centre')[0].scrollHeight});
     })
+    .fail(function() {
+      alert('error');
+    });
   });
 });
